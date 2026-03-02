@@ -1,0 +1,29 @@
+{
+  "name": "business-number-parser",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -n vite,server -c blue,green \"vite\" \"PLAYWRIGHT_BROWSERS_PATH=0 node server/index.js\"",
+    "dev:client": "vite",
+    "dev:server": "PLAYWRIGHT_BROWSERS_PATH=0 node server/index.js",
+    "build": "vite build",
+    "start": "NODE_ENV=production node server/index.js",
+    "preview": "vite preview",
+    "scrape": "PLAYWRIGHT_BROWSERS_PATH=0 node scripts/scrape.js",
+    "scrape:test": "PLAYWRIGHT_BROWSERS_PATH=0 node scripts/scrape.js --city stavropol --category кафе",
+    "setup": "PLAYWRIGHT_BROWSERS_PATH=0 npx playwright install chromium"
+  },
+  "dependencies": {
+    "vue": "^3.4.0",
+    "exceljs": "^4.4.0",
+    "express": "^4.21.0",
+    "dotenv": "^16.4.0",
+    "playwright": "^1.50.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.1.0",
+    "vite": "^5.4.0",
+    "concurrently": "^9.0.0"
+  }
+}
