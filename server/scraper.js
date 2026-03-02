@@ -34,7 +34,7 @@ export const CITIES = {
 export async function getBrowser() {
   if (!browser || !browser.isConnected()) {
     browser = await chromium.launch({
-      headless: false,
+      headless: process.env.HEADLESS !== 'false',
       args: ['--window-size=1280,900'],
     })
   }
